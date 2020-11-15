@@ -20,7 +20,7 @@ pony_sayz
 
 
 
-Pony says the message that you pass as parameter.
+Pony says the message that you pass as parameter. 
 
 
 * Free software: MIT license
@@ -30,7 +30,8 @@ Pony says the message that you pass as parameter.
 Features
 --------
 
-* TODO
+- Given a message you pony will say it to the console.
+- Add more ponies
 
 Credits
 -------
