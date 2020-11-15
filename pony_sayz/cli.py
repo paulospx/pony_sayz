@@ -1,7 +1,7 @@
 """Console script for pony_sayz."""
 import argparse
 import sys
-
+import os
 
 def main():
     """Console script for pony_sayz."""
@@ -12,19 +12,27 @@ def main():
     #print("Arguments: " + str(args._))
     #print("Replace this message by putting your code into "
     #      "pony_sayz.cli.main")
-    msg = args._[0]
+    msg = '(empty)'
+
+    if (len(args._) > 0):
+        msg = args._[0]
+    
     nr_traces = len(msg) + 4
     traces = '-' * nr_traces
 
-    filepath = './data/ace.pony'
     line_nr = 1
+
+    exe_path = sys.executable
+    dir1 = os.path.dirname(exe_path) 
+    filepath = dir1+'/data/rainbow.pony'
+
     with open(filepath, encoding='utf-8') as fp:
         lines = fp.readlines()
         for line in lines:
             if line_nr > 21:
-                if ('balloon5' in line):
+                if ('balloon10' in line):
                     print(traces)
-                    print(line.replace('balloon5',args._[0]).replace('$',''))
+                    print(line.replace('balloon10',msg).replace('$','').replace('\n',''))
                     print(traces)
                 else:
                     print(line.replace('\n','').replace('$','')) 
