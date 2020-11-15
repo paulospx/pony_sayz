@@ -44,10 +44,11 @@ setup(
     keywords='pony_sayz',
     name='pony_sayz',
     packages=find_packages(include=['pony_sayz', 'pony_sayz.*']),
+    data_files=[('data', ['data/rainbow.pony','data/ace.pony'])],
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/paulospx/pony_sayz',
-    version='0.1.0',
+    version='0.1.4',
     zip_safe=False,
 )
